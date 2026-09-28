@@ -2,7 +2,6 @@
 // Pour modifier un texte, un chiffre ou un projet, c'est ici que ça se passe.
 
 const BASE = import.meta.env.BASE_URL;
-const img = (name) => `${BASE}img/projects/${name}.webp`;
 
 // Espaces insécables : fine pour les milliers, normale avant « : ? ! % » en français.
 const NNBSP = ' ';
@@ -108,10 +107,8 @@ export const content = {
         {
           id: 'tender',
           name: 'Tender',
-          image: img('tender'),
-          alt: 'Pile de plaques de verre éclairées en bleu cobalt',
           date: 'Août → sept. 2026',
-          context: 'Produit Imagence, en développement',
+          context: 'Produit personnel, en développement',
           pitch: 'Un SaaS multi-tenant qui surveille les appels d’offres publics, les qualifie et aide à rédiger les réponses avec l’IA.',
           detail: 'Cinq sources de veille (BOAMP, TED, DECP…), un scoring explicable pour décider d’y aller ou non, et le remplissage du cadre de réponse imposé, dans le format de l’acheteur. Chaque organisation est isolée par la row-level security de PostgreSQL.',
           metrics: [
@@ -124,10 +121,8 @@ export const content = {
         {
           id: 'michel',
           name: 'Michel',
-          image: img('michel'),
-          alt: 'Grille de cubes noirs dont quelques-uns s’illuminent en bleu',
           date: 'Sept. 2026',
-          context: 'Produit Imagence, en développement',
+          context: 'Produit personnel, en développement',
           pitch: 'Un outil de gestion d’agence pensé pour l’IA, qui réunit CRM, devis, planning, temps passés et comptes rendus d’activité.',
           detail: 'L’assistant lit les données seul. Toute modification devient une proposition signée qu’une personne valide, journalisée et réversible. Il répond aussi dans Slack.',
           metrics: [
@@ -140,8 +135,6 @@ export const content = {
         {
           id: 'golum',
           name: 'Golum',
-          image: img('golum'),
-          alt: 'Sphère d’énergie bleue enfermée dans un cube de verre',
           date: 'Sept. 2026',
           context: 'Produit Imagence, pilote sur imagence.com',
           pitch: 'Un webmaster IA. On demande une modification en français, un agent Claude la réalise, et rien ne part en ligne sans validation humaine.',
@@ -156,8 +149,6 @@ export const content = {
         {
           id: 'imdata',
           name: 'IM.data',
-          image: img('imdata'),
-          alt: 'Monolithe noir vers lequel convergent des fibres de lumière bleue',
           date: 'Juin → sept. 2026',
           context: 'Produit Imagence, repris en équipe',
           pitch: 'Une plateforme IA souveraine, installée chez le client, pour interroger un corpus documentaire gouverné. Chaque réponse cite ses sources.',
@@ -172,8 +163,6 @@ export const content = {
         {
           id: 'teamleader',
           name: 'Connecteur Teamleader',
-          image: img('teamleader'),
-          alt: 'Deux blocs de titane reliés par un faisceau de fibres lumineuses',
           date: 'Mai → sept. 2026',
           context: 'Déployé à tous les collaborateurs',
           pitch: 'Un serveur MCP qui permet à Claude de lire et d’écrire dans le CRM de l’agence, un outil sans API publique.',
@@ -188,8 +177,6 @@ export const content = {
         {
           id: 'meilleurtaux',
           name: 'MeilleurTaux',
-          image: img('meilleurtaux'),
-          alt: 'Touche de clavier rétro qui se transforme en touche de verre noir',
           date: 'Juin 2026',
           context: 'Migration pour un client',
           pitch: 'La réécriture d’une application de courtage immobilier, de WinDev vers Python et React.',
@@ -406,10 +393,8 @@ export const content = {
         {
           id: 'tender',
           name: 'Tender',
-          image: img('tender'),
-          alt: 'A stack of glass plates lit in cobalt blue',
           date: 'Aug → Sep 2026',
-          context: 'Imagence product, in development',
+          context: 'Personal product, in development',
           pitch: 'A multi-tenant SaaS that watches public tenders, qualifies them and helps draft the responses with AI.',
           detail: 'Five tender feeds (BOAMP, TED, DECP…), explainable go/no-go scoring, and in-place filling of the buyer’s own response template. Each organization is isolated by PostgreSQL row-level security.',
           metrics: [
@@ -422,10 +407,8 @@ export const content = {
         {
           id: 'michel',
           name: 'Michel',
-          image: img('michel'),
-          alt: 'A grid of black cubes, a few of them glowing blue',
           date: 'Sep 2026',
-          context: 'Imagence product, in development',
+          context: 'Personal product, in development',
           pitch: 'An AI-native agency management tool covering CRM, quotes, planning, timesheets and activity reports.',
           detail: 'The assistant reads data on its own. Any change becomes a signed proposal that a person approves, logged and reversible. It also answers in Slack.',
           metrics: [
@@ -438,8 +421,6 @@ export const content = {
         {
           id: 'golum',
           name: 'Golum',
-          image: img('golum'),
-          alt: 'A blue energy orb sealed inside a glass cube',
           date: 'Sep 2026',
           context: 'Imagence product, piloted on imagence.com',
           pitch: 'An AI webmaster. You ask for a change in plain language, a Claude agent makes it, and nothing goes live without human approval.',
@@ -454,8 +435,6 @@ export const content = {
         {
           id: 'imdata',
           name: 'IM.data',
-          image: img('imdata'),
-          alt: 'A black monolith with blue light fibers converging into it',
           date: 'Jun → Sep 2026',
           context: 'Imagence product, now team-owned',
           pitch: 'A sovereign AI platform, installed on the client’s premises, for querying a governed document corpus. Every answer cites its sources.',
@@ -470,8 +449,6 @@ export const content = {
         {
           id: 'teamleader',
           name: 'Teamleader connector',
-          image: img('teamleader'),
-          alt: 'Two titanium blocks bridged by a bundle of glowing fibers',
           date: 'May → Sep 2026',
           context: 'Rolled out to all staff',
           pitch: 'An MCP server that lets Claude read and write the agency’s CRM, a tool with no public API.',
@@ -486,8 +463,6 @@ export const content = {
         {
           id: 'meilleurtaux',
           name: 'MeilleurTaux',
-          image: img('meilleurtaux'),
-          alt: 'A retro keyboard key turning into a black glass key',
           date: 'Jun 2026',
           context: 'Migration for a client',
           pitch: 'The rewrite of a mortgage brokerage application, from WinDev to Python and React.',

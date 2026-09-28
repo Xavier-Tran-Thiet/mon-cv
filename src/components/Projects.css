@@ -64,22 +64,6 @@
   background: var(--bg-sunk);
 }
 
-.panel__parallax {
-  position: absolute;
-  inset: 0 -8%;
-}
-
-.panel__parallax img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 1.4s var(--ease-out);
-}
-
-.panel:hover .panel__parallax img {
-  transform: scale(1.04);
-}
-
 .panel__body {
   display: flex;
   flex-direction: column;

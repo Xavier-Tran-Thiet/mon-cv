@@ -2,6 +2,7 @@ import { useRef } from 'react';
 import { useLang } from '../i18n.jsx';
 import { gsap, useGSAP } from '../lib/motion.js';
 import RevealTitle from './RevealTitle.jsx';
+import ProjectVisual from './ProjectVisual.jsx';
 import './Projects.css';
 
 // Même condition que le CSS : défilement horizontal épinglé sur grand écran, animations autorisées.
@@ -11,9 +12,7 @@ function Panel({ p }) {
   return (
     <article className="panel" aria-labelledby={`p-${p.id}`}>
       <div className="panel__media">
-        <div className="panel__parallax">
-          <img src={p.image} alt={p.alt} width="1536" height="1024" loading="lazy" decoding="async" />
-        </div>
+        <ProjectVisual id={p.id} label={`Logo ${p.name}`} />
       </div>
       <div className="panel__body">
         <div className="panel__top">
@@ -78,13 +77,13 @@ export default function Projects() {
           },
         });
 
-        // Léger décalage de l'image dans son cadre pendant le défilement horizontal.
+        // Le fantôme du logo glisse derrière le logo pendant le défilement horizontal (effet de profondeur).
         gsap.utils.toArray('.panel').forEach((panel) => {
           gsap.fromTo(
-            panel.querySelector('.panel__parallax'),
-            { xPercent: -7 },
+            panel.querySelector('.visual__ghost'),
+            { xPercent: -12 },
             {
-              xPercent: 7,
+              xPercent: 12,
               ease: 'none',
               scrollTrigger: { trigger: panel, containerAnimation: pan, start: 'left right', end: 'right left', scrub: true },
             },

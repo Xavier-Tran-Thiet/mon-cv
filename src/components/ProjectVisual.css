@@ -1,0 +1,92 @@
+/* Scène du logo : fond sombre de la marque, halo, grille de points et fantôme géant du logo.
+   Elle reste sombre dans les deux thèmes, comme une photo produit. */
+.visual {
+  position: absolute;
+  inset: 0;
+  isolation: isolate;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(55% 55% at 50% 52%, color-mix(in srgb, var(--v-glow) 42%, transparent), transparent 72%),
+    radial-gradient(120% 90% at 100% 0%, color-mix(in srgb, var(--v-glow) 20%, transparent), transparent 60%),
+    var(--v-bg);
+}
+
+.visual::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.16) 1px, transparent 1.4px);
+  background-size: 22px 22px;
+  -webkit-mask-image: radial-gradient(70% 70% at 50% 50%, #000, transparent 78%);
+  mask-image: radial-gradient(70% 70% at 50% 50%, #000, transparent 78%);
+}
+
+.visual__ghost {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: grid;
+  place-items: center;
+  opacity: 0.08;
+}
+
+.visual__ghost svg,
+.visual__ghost .lockup {
+  width: auto;
+  height: 150%;
+  max-width: none;
+}
+
+.visual--wordmark .visual__ghost svg,
+.visual--lockup .visual__ghost .lockup {
+  width: 190%;
+  height: auto;
+}
+
+.visual__logo {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: clamp(88px, 30%, 190px);
+  filter: drop-shadow(0 28px 50px color-mix(in srgb, var(--v-glow) 50%, transparent));
+  transition: transform 1.1s var(--ease-out);
+}
+
+.visual__logo svg {
+  width: 100%;
+  height: auto;
+}
+
+.visual--wordmark .visual__logo {
+  width: 58%;
+}
+
+.visual--lockup .visual__logo {
+  width: 66%;
+}
+
+.lockup {
+  display: flex;
+  align-items: center;
+  gap: 7%;
+  width: 100%;
+}
+
+.lockup > svg:first-child {
+  flex: none;
+  width: 24%;
+  height: auto;
+}
+
+.lockup__word {
+  flex: 1;
+  height: auto;
+}
+
+.panel:hover .visual__logo {
+  transform: translateY(-6px) scale(1.05);
+}

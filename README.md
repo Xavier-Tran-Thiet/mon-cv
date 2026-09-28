@@ -51,7 +51,7 @@ Tous les textes, chiffres et projets sont dans **`src/content.js`**, en françai
 | Quoi | Où |
 | --- | --- |
 | Textes, projets, parcours, compétences | `src/content.js` |
-| Visuels des projets (1536×1024, WebP) | `public/img/projects/` |
+| Logos des projets (repris de chaque repo) | `src/components/ProjectVisual.jsx` |
 | CV téléchargeables | `public/cv/` |
 | Couleurs, typographies, rayons | tokens en tête de `src/styles/global.css` |
 | Forme et position des particules par section | `SCENES` dans `src/components/ParticleField.jsx` |
@@ -65,9 +65,9 @@ src/
   lib/motion.js         GSAP, Lenis, bouton magnétique
   lib/theme.js          thème clair/sombre
   three/                moteur de particules WebGL
+  data/logoPaths.js     tracés des logotypes (générés depuis les polices des produits)
   components/           une section par composant, chacune avec son CSS
 public/
-  img/projects/         visuels des projets
   cv/                   CV PDF (sans numéro de téléphone)
 ```
 

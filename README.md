@@ -68,9 +68,12 @@ src/
   components/           une section par composant, chacune avec son CSS
 public/
   img/projects/         visuels des projets
-  cv/                   CV PDF
-  llms.txt, robots.txt
+  cv/                   CV PDF (sans numéro de téléphone)
 ```
+
+## Indexation
+
+Le site n'est volontairement **pas indexé** : `index.html` porte `<meta name="robots" content="noindex, nofollow, noarchive">`. Pour l'ouvrir aux moteurs de recherche, il suffit de retirer cette balise.
 
 ## Accessibilité et performance
 

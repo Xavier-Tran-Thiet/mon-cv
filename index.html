@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Xavier Tran-Thiet · Production digitale et IA</title>
+    <meta
+      name="description"
+      content="Responsable de production digitale chez Imagence depuis 15 ans, je conduis la transformation IA de l’agence et je développe des produits IA en React, Python et PostgreSQL."
+    />
+    <meta name="author" content="Xavier Tran-Thiet" />
+    <meta name="theme-color" content="#06070B" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#F2F4F8" media="(prefers-color-scheme: light)" />
+    <meta property="og:type" content="profile" />
+    <meta property="og:title" content="Xavier Tran-Thiet · Production digitale et IA" />
+    <meta
+      property="og:description"
+      content="15 ans de production digitale, la transformation IA d’une agence, et six produits IA conçus et développés en 2026."
+    />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@50..150,300..900&family=Geist+Mono:wght@400..600&family=Geist:wght@300..700&display=swap"
+    />
+
+    <script>
+      // Applique le thème et la langue mémorisés avant le premier rendu (évite le flash).
+      (function () {
+        try {
+          var t = localStorage.getItem('xtt-theme');
+          if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+          var l = localStorage.getItem('xtt-lang');
+          if (l === 'fr' || l === 'en') document.documentElement.lang = l;
+        } catch (e) {}
+      })();
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Xavier Tran-Thiet",
+        "jobTitle": "Responsable de production digitale, transformation et adoption de l'IA",
+        "worksFor": { "@type": "Organization", "name": "Imagence" },
+        "address": { "@type": "PostalAddress", "addressLocality": "Paris", "addressCountry": "FR" },
+        "sameAs": ["https://www.linkedin.com/in/xavier-tran-thiet-70175480"],
+        "knowsAbout": ["Production digitale", "Transformation IA", "React", "Vite", "Python", "FastAPI", "Docker", "PostgreSQL", "MCP"]
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>
+      <p style="font-family: system-ui, sans-serif; padding: 24px">
+        Xavier Tran-Thiet, responsable de production digitale et transformation IA.
+        Contact : xaviertt@hotmail.fr ·
+        <a href="https://www.linkedin.com/in/xavier-tran-thiet-70175480">LinkedIn</a>
+      </p>
+    </noscript>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

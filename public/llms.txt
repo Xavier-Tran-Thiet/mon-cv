@@ -1,0 +1,21 @@
+# Xavier Tran-Thiet
+
+> Responsable de production digitale chez Imagence (Paris) depuis 2010. Conduit la transformation IA de l'agence depuis 2026 et développe lui-même des produits IA en React, Vite, Python (FastAPI), PostgreSQL et Docker.
+
+## Profil
+- 15 ans dans le digital, environ 20 projets pilotés en parallèle, équipes distribuées à l'international.
+- Secteurs : mutuelles et protection sociale, santé et pharma, e-commerce, édition, enseignement supérieur.
+- Langues : français (natif), anglais (professionnel complet), italien (intermédiaire).
+
+## Produits 2026
+- Tender : SaaS multi-tenant de veille et de réponse aux appels d'offres publics.
+- Michel : outil de gestion d'agence pensé pour l'IA (CRM, devis, planning, temps).
+- Golum : webmaster IA avec agent Claude sandboxé et validation humaine.
+- IM.data : plateforme IA souveraine on-premise, recherche à sources tracées.
+- Connecteur Teamleader : serveur MCP donnant à Claude l'accès au CRM de l'agence.
+- MeilleurTaux : migration d'une application WinDev vers Python et React.
+
+## Contact
+- Email : xaviertt@hotmail.fr
+- LinkedIn : https://www.linkedin.com/in/xavier-tran-thiet-70175480
+- CV : ./cv/CV_Xavier_Tran-Thiet_FR.pdf et ./cv/CV_Xavier_Tran-Thiet_EN.pdf

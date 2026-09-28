@@ -1,0 +1,20 @@
+.profile__text {
+  max-width: 29ch;
+  margin-left: clamp(0px, 14vw, 260px);
+  font-family: var(--font-display);
+  font-size: clamp(1.55rem, 1rem + 2.3vw, 3.1rem);
+  font-weight: 500;
+  font-variation-settings: 'wdth' 100;
+  line-height: 1.16;
+  letter-spacing: -0.022em;
+}
+
+.w--hl {
+  color: var(--accent-text);
+}
+
+@media (max-width: 899px) {
+  .profile__text {
+    margin-left: 0;
+  }
+}

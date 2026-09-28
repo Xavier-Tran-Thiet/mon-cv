@@ -1,0 +1,127 @@
+.more__title {
+  margin-bottom: clamp(28px, 4vw, 48px);
+}
+
+.more__item + .more__item {
+  border-top: 1px solid var(--line);
+}
+
+.more__row {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: minmax(200px, 3fr) 5fr minmax(110px, auto) 40px;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  padding: 26px 12px;
+  text-align: left;
+}
+
+.more__row::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: var(--r-inner);
+  background: linear-gradient(90deg, color-mix(in srgb, var(--accent) 14%, transparent), transparent 75%);
+  opacity: 0;
+  transition: opacity 0.5s var(--ease-out);
+}
+
+.more__row:hover::before,
+.more__item.is-open .more__row::before {
+  opacity: 1;
+}
+
+.more__name {
+  font-family: var(--font-display);
+  font-size: var(--step-2);
+  font-weight: 600;
+  font-variation-settings: 'wdth' 118;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  transition: translate 0.6s var(--ease-out);
+}
+
+.more__row:hover .more__name {
+  translate: 10px 0;
+}
+
+.more__pitch {
+  color: var(--fg-mute);
+}
+
+.more__tag {
+  justify-self: end;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--accent-text);
+  white-space: nowrap;
+}
+
+.more__icon {
+  justify-self: end;
+  width: 22px;
+  height: 22px;
+  transition: rotate 0.5s var(--ease-out);
+}
+
+.more__item.is-open .more__icon {
+  rotate: 45deg;
+}
+
+.more__panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.5s var(--ease-out);
+}
+
+.more__item.is-open .more__panel {
+  grid-template-rows: 1fr;
+}
+
+.more__panel-inner {
+  overflow: hidden;
+}
+
+.more__panel-content {
+  display: grid;
+  gap: 16px;
+  max-width: 68ch;
+  margin-left: calc(3 / 8 * 100% - 12px);
+  padding: 4px 12px 30px;
+  color: var(--fg-mute);
+}
+
+@media (max-width: 899px) {
+  .more__row {
+    grid-template-columns: 1fr auto;
+    gap: 6px 16px;
+    padding: 22px 4px;
+  }
+
+  .more__name {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .more__icon {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+  }
+
+  .more__pitch {
+    grid-column: 1;
+    font-size: 0.95rem;
+  }
+
+  .more__tag {
+    display: none;
+  }
+
+  .more__panel-content {
+    margin-left: 0;
+    padding: 0 4px 26px;
+  }
+}

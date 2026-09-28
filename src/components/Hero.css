@@ -1,0 +1,71 @@
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding-block: 112px 72px;
+}
+
+.hero__content {
+  position: relative;
+  max-width: 920px;
+}
+
+.hero__eyebrow {
+  min-height: 1.5em;
+}
+
+.hero__name {
+  margin-block: 22px 28px;
+  font-family: var(--font-display);
+  font-size: var(--step-5);
+  font-weight: 700;
+  line-height: 0.9;
+  letter-spacing: -0.035em;
+}
+
+.hero__line {
+  display: block;
+  overflow: clip;
+  padding-bottom: 0.06em;
+  white-space: nowrap;
+}
+
+.hero__char {
+  --wdth: 118;
+  display: inline-block;
+  font-variation-settings: 'wdth' var(--wdth);
+}
+
+/* « Xavier » en contour, « Tran-Thiet » plein : même hiérarchie que sur le CV. */
+.hero__line--outline .hero__char {
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--fg);
+  font-weight: 600;
+}
+
+.hero__sub {
+  max-width: 36ch;
+  font-size: var(--step-1);
+  line-height: 1.5;
+  color: var(--fg-mute);
+}
+
+.hero__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 36px;
+}
+
+@media (max-width: 899px) {
+  .hero {
+    align-items: flex-end;
+    padding-bottom: 56px;
+  }
+
+  .hero__line--outline .hero__char {
+    -webkit-text-stroke-width: 1px;
+  }
+}

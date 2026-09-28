@@ -1,0 +1,33 @@
+.footer {
+  position: relative;
+  z-index: 1;
+  padding-block: 28px calc(28px + env(safe-area-inset-bottom, 0px));
+  border-top: 1px solid var(--line);
+}
+
+.footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 32px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--fg-mute);
+}
+
+.footer__top {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.3s var(--ease-out);
+}
+
+.footer__top:hover {
+  color: var(--fg);
+}
+
+.footer__top svg {
+  width: 14px;
+  height: 14px;
+}

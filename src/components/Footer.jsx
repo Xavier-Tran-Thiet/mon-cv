@@ -9,7 +9,9 @@ export default function Footer() {
     <footer className="footer">
       <div className="container footer__inner">
         <p>© 2026 Xavier Tran-Thiet</p>
-        <p>{t.footer.built}</p>
+        <p>
+          {t.footer.built} {t.footer.analytics}
+        </p>
         <a
           href="#top"
           className="footer__top"

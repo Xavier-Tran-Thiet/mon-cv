@@ -1,6 +1,7 @@
 import { lazy, Suspense, useEffect } from 'react';
 import { useLang } from './i18n.jsx';
 import { initSmoothScroll, ScrollTrigger } from './lib/motion.js';
+import { track } from './lib/track.js';
 import Nav from './components/Nav.jsx';
 import Hero from './components/Hero.jsx';
 import Stats from './components/Stats.jsx';
@@ -29,6 +30,20 @@ export default function App() {
 
   useEffect(() => {
     document.fonts?.ready.then(refreshTriggers);
+  }, []);
+
+  // Mesure d'audience : jusqu'où les visiteurs descendent (un événement par section et par visite).
+  useEffect(() => {
+    const sections = ['methode', 'projets', 'competences', 'parcours', 'contact'];
+    const triggers = sections.map((id) =>
+      ScrollTrigger.create({
+        trigger: `#${id}`,
+        start: 'top 60%',
+        once: true,
+        onEnter: () => track(`vu-${id}`, `Section « ${id} » atteinte`),
+      }),
+    );
+    return () => triggers.forEach((t) => t.kill());
   }, []);
 
   // Changer de langue modifie la hauteur des blocs : on recalcule les déclencheurs.

@@ -3,15 +3,20 @@ import { List, Moon, Sun, X } from '@phosphor-icons/react';
 import { useLang } from '../i18n.jsx';
 import { useTheme } from '../lib/theme.js';
 import { ScrollTrigger, scrollToTarget, setScrollLocked, useMagnetic } from '../lib/motion.js';
+import { track } from '../lib/track.js';
 import './Nav.css';
 
 const SECTION_IDS = ['projets', 'methode', 'competences', 'parcours', 'contact'];
 
 function LangSwitch({ lang, setLang, label }) {
+  const choose = (l) => {
+    if (l !== lang) track(`langue-${l}`, `Passage en ${l.toUpperCase()}`);
+    setLang(l);
+  };
   return (
     <div className="seg" role="group" aria-label={label}>
       {['fr', 'en'].map((l) => (
-        <button key={l} type="button" aria-pressed={lang === l} onClick={() => setLang(l)}>
+        <button key={l} type="button" aria-pressed={lang === l} onClick={() => choose(l)}>
           {l.toUpperCase()}
         </button>
       ))}

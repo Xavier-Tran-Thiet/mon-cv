@@ -3,6 +3,7 @@ import { ArrowDownRight, DownloadSimple } from '@phosphor-icons/react';
 import { useLang } from '../i18n.jsx';
 import { profile } from '../content.js';
 import { gsap, prefersReduced, scrollToTarget, useGSAP, useMagnetic } from '../lib/motion.js';
+import { track } from '../lib/track.js';
 import './Hero.css';
 
 const fine = () => window.matchMedia('(hover: hover) and (pointer: fine)').matches;
@@ -83,7 +84,12 @@ export default function Hero() {
               {t.hero.primary}
               <ArrowDownRight weight="bold" />
             </a>
-            <a href={profile.cv[lang]} className="btn btn--ghost" download>
+            <a
+              href={profile.cv[lang]}
+              className="btn btn--ghost"
+              download
+              onClick={() => track(`cv-${lang}-hero`, `CV ${lang.toUpperCase()} téléchargé (haut de page)`)}
+            >
               <DownloadSimple weight="bold" />
               {t.hero.secondary}
             </a>

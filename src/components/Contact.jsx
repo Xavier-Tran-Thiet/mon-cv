@@ -3,6 +3,7 @@ import { ArrowUpRight, Check, Copy, DownloadSimple, LinkedinLogo } from '@phosph
 import { useLang } from '../i18n.jsx';
 import { profile } from '../content.js';
 import { gsap, prefersReduced, useGSAP } from '../lib/motion.js';
+import { track } from '../lib/track.js';
 import RevealTitle from './RevealTitle.jsx';
 import './Contact.css';
 
@@ -28,6 +29,7 @@ export default function Contact() {
   );
 
   const copy = async () => {
+    track('copie-email', 'Adresse email copiée');
     try {
       await navigator.clipboard.writeText(profile.email);
       setCopied(true);
@@ -52,7 +54,12 @@ export default function Contact() {
           <p className="contact__sub contact__reveal">{t.contact.sub}</p>
 
           <div className="contact__mail-row contact__reveal">
-            <a ref={mailRef} className="contact__mail" href={`mailto:${profile.email}`}>
+            <a
+              ref={mailRef}
+              className="contact__mail"
+              href={`mailto:${profile.email}`}
+              onClick={() => track('clic-email', 'Clic sur l’adresse email')}
+            >
               {profile.email}
             </a>
             <button type="button" className="icon-btn contact__copy" onClick={copy} aria-label={copied ? t.contact.copied : t.contact.copy} title={t.contact.copy}>
@@ -64,16 +71,34 @@ export default function Contact() {
           </div>
 
           <div className="contact__links contact__reveal">
-            <a className="btn btn--ghost" href={profile.linkedin} target="_blank" rel="noopener noreferrer">
+            <a
+              className="btn btn--ghost"
+              href={profile.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => track('clic-linkedin', 'Clic vers LinkedIn')}
+            >
               <LinkedinLogo weight="fill" />
               {t.contact.linkedin}
               <ArrowUpRight />
             </a>
-            <a className="btn btn--ghost" href={profile.cv.fr} download hrefLang="fr">
+            <a
+              className="btn btn--ghost"
+              href={profile.cv.fr}
+              download
+              hrefLang="fr"
+              onClick={() => track('cv-fr-contact', 'CV FR téléchargé (contact)')}
+            >
               <DownloadSimple weight="bold" />
               {t.contact.cvFr}
             </a>
-            <a className="btn btn--ghost" href={profile.cv.en} download hrefLang="en">
+            <a
+              className="btn btn--ghost"
+              href={profile.cv.en}
+              download
+              hrefLang="en"
+              onClick={() => track('cv-en-contact', 'CV EN téléchargé (contact)')}
+            >
               <DownloadSimple weight="bold" />
               {t.contact.cvEn}
             </a>

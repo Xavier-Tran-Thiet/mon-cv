@@ -323,6 +323,7 @@ export const content = {
     },
     footer: {
       built: 'Conçu et développé avec React, Vite, Three.js et GSAP.',
+      analytics: 'Mesure d’audience anonyme, sans cookie.',
       top: 'Haut de page',
     },
   },
@@ -609,6 +610,7 @@ export const content = {
     },
     footer: {
       built: 'Designed and built with React, Vite, Three.js and GSAP.',
+      analytics: 'Anonymous, cookie-free analytics.',
       top: 'Back to top',
     },
   },

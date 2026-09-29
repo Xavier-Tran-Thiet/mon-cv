@@ -71,6 +71,24 @@ public/
   cv/                   CV PDF (sans numéro de téléphone)
 ```
 
+## Mesure d'audience (GoatCounter)
+
+Tableau de bord : https://xavier-tran-thiet.goatcounter.com (sans cookie, pas de bandeau de consentement nécessaire).
+
+- **Visites** : comptées automatiquement (pays, appareil, provenance).
+- **Événements** (`src/lib/track.js`) :
+
+  | Événement | Signification |
+  | --- | --- |
+  | `cv-fr-hero`, `cv-en-hero` | téléchargement du CV depuis le haut de page |
+  | `cv-fr-contact`, `cv-en-contact` | téléchargement du CV depuis la section contact |
+  | `clic-linkedin`, `clic-email`, `copie-email` | prise de contact |
+  | `langue-fr`, `langue-en` | changement de langue |
+  | `vu-methode`, `vu-projets`, `vu-competences`, `vu-parcours`, `vu-contact` | section atteinte |
+
+- **Lien personnalisé par candidature** : ajouter `?ref=nom-entreprise` à l'adresse (ex. `https://xavier-tran-thiet.github.io/mon-cv/?ref=pyltech`). La valeur apparaît comme provenance dans le tableau de bord.
+- **Exclure ses propres visites** : ouvrir une fois `https://xavier-tran-thiet.github.io/mon-cv/#toggle-goatcounter` sur chaque navigateur et appareil (à refaire pour réactiver le comptage).
+
 ## Indexation
 
 Le site n'est volontairement **pas indexé** : `index.html` porte `<meta name="robots" content="noindex, nofollow, noarchive">`. Pour l'ouvrir aux moteurs de recherche, il suffit de retirer cette balise.
